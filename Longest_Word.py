@@ -17,7 +17,6 @@ def r_longest(s, d, r_word ='', s_ix =0, d_ix=0):
     if len(s) == 0 or len(d) == 0:
         return r_word
     
-    #print(r_word, "i: ")
     if s[s_ix] == d[d_ix]:
         r_word += d[d_ix]
         #print(r_word)
@@ -58,11 +57,9 @@ def i_longest(s, d, w):
                 new_word += word[w_idx]
                 s_idx += 1
                 w_idx += 1
-                #print("1.- 1st s_idx: ", s_idx, "\tw_idx: ", w_idx, "New_word: ", new_word)
 
         else: #No match found, increase the s index
                 s_idx +=1
-                #print("2.- Else s_idx: ", s_idx, "\tw_idx: ", w_idx, "New_word: ", new_word)
 
         if s_idx >= len(s) or w_idx >= len(word): #We finished checking all the word
                 d_idx += 1
@@ -71,7 +68,6 @@ def i_longest(s, d, w):
                 if len(new_word) > len(w): #Assign the longest word to w
                     w = new_word
                     
-                #print("new_word\t", new_word, "\tWord\t", w)
                 new_word = ''
                 
         if d_idx >= len(d): #Exiting critereon, d is empty
